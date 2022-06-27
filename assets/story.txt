@@ -1,0 +1,22 @@
+$sprite 1_marketentry
+$playmusic id
+$stopmusic id
+$sound
+$wait 4000
+
+Story
+Another story thingy
+$choices
+- Cock [#ok]
+- Amogus [#go|*milk=false]
+
+$check milk|true #milkexists|false #milkdoesntexist
+
+#ok
+
+
+#go
+
+#milkexists
+
+#milkdoesntexist

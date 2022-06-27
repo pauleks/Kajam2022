@@ -1,0 +1,57 @@
+# Warning
+# Spoilers and Lithuanian language ahead!
+
+kitu dialogai butu melyni
+zaidejo butu balti, bet kur itempta tai shakintu
+
+esi parduotuveje, kazka perki etc etc
+perki produktus (ar imi?):
+- sokoladas - pirk nepirk
+- pienas (svarbu) - pirk nepirk
+- kazkokia ewww mase supuvusi - nepirk
+jau yra unsettling aplinka kur pardavejo veidas butu arba deformuotas, arba uzblurintas
+- that's all?
+- 
+
+
+=== SCRIPT ===
+
+ah, the smell of quickmart
+i need to grab a few things first
+before going back home
+
+you could get lost easily
+between all these aisles
+
+<transition to chocolate>
+should i buy chocolate?
+- yes
+- no
+
+<transition to milk>
+the last pack of milk
+should i buy it?
+- yes (hell ending)
+- no (other ending)
+
+<transition to a disgusting mass>
+should i...?
+- yes
+- no
+
+<go to checkout>
+<blurred face casher>
+that's all?
+OR
+are you sure you want to buy
+...that thing?
+whatever
+
+i head out towards the exit
+
+<scene outside - parking lot, forest in front>
+the only back home
+is through that forest
+
+<car passes by or something>
+<scene switches to inside the forest>
