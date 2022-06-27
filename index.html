@@ -24,15 +24,19 @@
 
             border: 5px solid #0400ff;
             opacity: 1;
-            animation: borderReveal 6s forwards;
+            animation: reveal 10s forwards;
         }
 
-        @keyframes borderReveal {
+        @keyframes reveal {
             0% {
                 opacity: 0;
                 border: 0px solid #000;
             }
-            40% {
+            10% {
+                opacity: 0;
+                border: 0px solid #000;
+            }
+            50% {
                 opacity: 1;
                 border: 5px solid #000;
             }

@@ -26,7 +26,7 @@ between all these aisles
 <transition to chocolate>
 should i buy chocolate?
 - yes
-- no
+- i love chocolate
 
 <transition to milk>
 the last pack of milk
@@ -45,13 +45,91 @@ that's all?
 OR
 are you sure you want to buy
 ...that thing?
-whatever
+whatever just go
 
 i head out towards the exit
 
 <scene outside - parking lot, forest in front>
 the only back home
 is through that forest
+...
+jeez, it feels spooky
 
 <car passes by or something>
-<scene switches to inside the forest>
+<scene switches to inside the forest - looking up>
+it feels so calm
+...
+you're enjoying the view
+of how the trees are dancing
+to the music of wind blowing
+
+<switch to the path view, with a void forward>
+people call this path the cursed one
+besides my classmate disappearing
+i have no idea why people do that
+
+<forest bed>
+you've strumbled upon "forest bed"
+would you like to rest?
+
+- I'll rest here
+- [shaking] No
+
+{yes}
+<looking up again, grass like from porter's albums on the sides>
+...
+[Shaking] feels as if someone else is laying with you.
+... long pause
+You feel them leave
+Your eyelashes feel heavy and you fall asleep
+<switch to night forest>
+you wake up after a peaceful sleep
+but your groceries are nowhere to be seen
+<switch to forest bed at night>
+you get up and start walking back home
+<new dark path with a red color glowing light source somewhere and fireflies too>
+you lose the track of your path
+and you get lost in the woods
+you see a glowing light somewhere between the trees
+do you proceed to go there?
+
+- [shaking] yes -> i guess i've got nowhere else to go
+- no -> you feel too scared to walk into the dark again
+
+you proceed to follow the strange light
+
+the light leads you to a glowing house
+you proceed to go inside
+
+<inside>
+inside...
+there's a mysterious shadow figure
+coming towards you
+<shadow figure near player>
+a new guest i see
+sorry about your groceries
+i needed them really bad for my experiments
+i hope that meeting Pugo wasn't too scary
+
+<strange looking dog>
+it looks funny
+
+(proceed to {continuation})
+
+{no}
+<dark path view>
+you feel them behind your back
+getting closer and closer to you
+suddenly 
+a tremendous pain pierces your leg
+<falling down sounds>
+<looks at the creature>
+the last thing you can see
+are the glowing hellish eyes in front of you
+before you fall unconcious
+<inside the house in front of a fireplace>
+you wake up
+it feels warm
+
+
+{continuation}
