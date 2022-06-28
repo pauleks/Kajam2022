@@ -1,38 +1,28 @@
 # Warning
 # Spoilers and Lithuanian language ahead!
 
-kitu dialogai butu melyni
+kitu veikeju dialogai butu melyni
 zaidejo butu balti, bet kur itempta tai shakintu
-
-esi parduotuveje, kazka perki etc etc
-perki produktus (ar imi?):
-- sokoladas - pirk nepirk
-- pienas (svarbu) - pirk nepirk
-- kazkokia ewww mase supuvusi - nepirk
-jau yra unsettling aplinka kur pardavejo veidas butu arba deformuotas, arba uzblurintas
-- that's all?
-- 
-
 
 === SCRIPT ===
 
-ah, the smell of quickmart
+ah, the smell and sound of quickmart
 i need to grab a few things first
 before going back home
 
 you could get lost easily
-between all these aisles
+between all these aisles too
 
 <transition to chocolate>
-should i buy chocolate?
+Should I buy chocolate?
 - yes
-- i love chocolate
+- I love chocolate!
 
 <transition to milk>
 the last pack of milk
-should i buy it?
-- yes (hell ending)
-- no (other ending)
+Should I buy it?
+- yes (good ending)
+- no (hell ending)
 
 <transition to a disgusting mass>
 should i...?
@@ -47,13 +37,12 @@ are you sure you want to buy
 ...that thing?
 whatever just go
 
+<view to the exit with other people with blurred faces or something>
 i head out towards the exit
 
 <scene outside - parking lot, forest in front>
-the only back home
-is through that forest
+the only back home is through that forest
 ...
-jeez, it feels spooky
 
 <car passes by or something>
 <scene switches to inside the forest - looking up>
@@ -61,7 +50,7 @@ it feels so calm
 ...
 you're enjoying the view
 of how the trees are dancing
-to the music of wind blowing
+to the music of wind
 
 <switch to the path view, with a void forward>
 people call this path the cursed one
@@ -69,7 +58,7 @@ besides my classmate disappearing
 i have no idea why people do that
 
 <forest bed>
-you've strumbled upon "forest bed"
+you've stumbled upon "forest bed"
 would you like to rest?
 
 - I'll rest here
@@ -81,6 +70,7 @@ would you like to rest?
 [Shaking] feels as if someone else is laying with you.
 ... long pause
 You feel them leave
+<blank visuals>
 Your eyelashes feel heavy and you fall asleep
 <switch to night forest>
 you wake up after a peaceful sleep
@@ -91,28 +81,28 @@ you get up and start walking back home
 you lose the track of your path
 and you get lost in the woods
 you see a glowing light somewhere between the trees
-do you proceed to go there?
+Do you proceed to go there?
 
 - [shaking] yes -> i guess i've got nowhere else to go
 - no -> you feel too scared to walk into the dark again
 
 you proceed to follow the strange light
 
-the light leads you to a glowing house
-you proceed to go inside
+the light leads you to an old wooden house
+you go inside
 
 <inside>
-inside...
+...
 there's a mysterious shadow figure
 coming towards you
 <shadow figure near player>
-a new guest i see
-sorry about your groceries
-i needed them really bad for my experiments
-i hope that meeting Pugo wasn't too scary
+A new guest, I see!
+Welcome! I was expecting you, actually.
+I hope that meeting Pugo earlier today wasn't too scary
 
 <strange looking dog>
 it looks funny
+> he's cute, isn't he?
 
 (proceed to {continuation})
 
@@ -120,16 +110,97 @@ it looks funny
 <dark path view>
 you feel them behind your back
 getting closer and closer to you
-suddenly 
+suddenly
 a tremendous pain pierces your leg
 <falling down sounds>
 <looks at the creature>
 the last thing you can see
 are the glowing hellish eyes in front of you
-before you fall unconcious
+before you fall unconscious
 <inside the house in front of a fireplace>
 you wake up
 it feels warm
+suddenly, you notice a strange figure
+walking around the house
+it's coming towards you
+> ah, I see you're awake
+> sorry about meeting Pugo like that
+> he bit you while you were running
+> he's been a bad dog lately
 
+<strange looking dog>
+oh, so that's the creature i met earlier
+> but he's cute, isn't he?
 
 {continuation}
+> Sorry about your groceries
+> I took your chocolate
+> for something that I'm working on
+> Actually...
+> You will be a perfect lab rat for my creation
+> come closer to my cauldron
+
+<cauldron scene>
+> can you smell it?
+it smells like earwax
+> it's a smell of progress
+> it should be cooked by now, let me see
+<the monster puts its hand into the cauldron>
+> it should be somewhere there
+> Got it!
+<nuo rankos kylanciu garu scena su blizganciu sparkles pipiru>
+> my newest creation
+> the taste is so pure
+> that you can taste [the actual].shake spiciness
+> ...
+> but i can't do that myself...
+> I'll need you to taste this for me
+> there's no escape from this
+
+$choices:
+- do it
+- taste the pepper
+
+you take the pepper from the creature
+it's so hot, it's burning your skin
+you close your eyes, put the pepper inside your mouth
+and you bite it
+
+<red mass pulsating on screen>
+the worst pain like you've never experienced before
+has filled up your whole body
+it feels like you're fighting against the force of a thousand fires
+
+<the player opens eyes, screen tilted a lil bit>
+> no other human will ever taste the hellish spiciness, EVER
+
+<screen slowly becomes red, tarsi nusileistu uzdangalas, padaras igauna dantis>
+[shaking red] FEEL THE PAIN
+
+[red onwards] You feel your soul slowly leaving your body
+Only if there was something that could save me from this madness
+
+[Jei nepirko pieno]
+Your inner organs are burning...
+You lose your consciousness.
+...
+Is this it?
+Is this the end?
+-> Ending
+
+[Jei pirko piena]
+MILK! Where is it???
+You run through the room with your eyes.
+Here it is!
+You just need to grab it across the room.
+Your face is burning, your palms are sweaty and hands feel heavy.
+...
+You lost too much valuable time resisting the devilish feeling.
+Your inner organs are burning...
+You lose your consciousness.
+
+{Ending. Satan's office, phone in the middle}
+Welcome to purgatory. The Satan's is currently busy.
+You're currently #53rd in line, please wait.
+
+Fin.
