@@ -14,6 +14,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            user-select: none;
         }
 
         #game {
@@ -49,22 +50,25 @@
 <body>
     <canvas id="game"></canvas>
     <script src="./scripts/kaboom.js"></script>
+    <script src="./scripts/constants.js"></script>
     <script>
         kaboom({
-            width: 600,
-            height: 600,
-            font: 'apl386',
+            width: Constants.canvas.width,
+            height: Constants.canvas.height,
             canvas: document.querySelector('#game'),
             background: [0, 0, 0],
             crisp: true
         })
 
-        loadFont("Playfair", "./assets/PlayfairDisplay.png", 20, 30);
+        loadFont("Playfair", "./assets/Playfair.png", 20, 30);
 
         let label = add([
-            text(`Your face is burning, your palms are sweaty and hands feel heavy.`, { font: "Playfair", width: 600, size: 40 }),
+            text(`i need to grab a few things first before going back home.`, { font: Constants.font.name, width: Constants.canvas.width, size: Constants.font.size }),
         ])
+
+        console.dir(label);
     </script>
+    <script src="./scripts/helpers.js"></script>
     <script src="./scripts/loadAssets.js"></script>
     <script src="./scripts/index.js"></script>
 </body>
