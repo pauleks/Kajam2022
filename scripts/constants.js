@@ -11,15 +11,5 @@ const Constants = {
             height: 30,
         },
     },
-    actions: {
-        changeSprite: "changeSprite",
-        playSoundEffect: "playSoundEffect",
-        showDialogue: "showDialogue",
-        showChoices: "showChoices",
-        playBackgroundMusic: "playBackgroundMusic",
-        stopBackgroundMusic: "stopBackgroundMusic",
-        wait: "wait",
-        setVariable: "setVariable",
-        getVariable: "getVariable",
-    },
+    TEXT_REVEAL_SPEED: 400
 };

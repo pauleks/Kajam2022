@@ -1,0 +1,28 @@
+$sprite test
+$choices | Yes. #buyMass | No. #doNotBuyMass
+
+#buyMass
+Amongos.
+$end
+
+#doNotBuyMass
+Sus.
+$end
+
+$set milk false
+$if milk true | #hasMilk | #noMilk
+
+#hasMilk
+I've got milk!
+$end
+
+#noMilk
+No milk :( NOOO That is a very sad moment in history
+
+
+That was a very sad moment
+[Indeed it was].talking
+You hear somebody say this.
+[I'm coming for you].red
+[Run].shake
+$end
