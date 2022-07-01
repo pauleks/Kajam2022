@@ -1,28 +1,73 @@
-$sprite test
-$choices | Yes. #buyMass | No. #doNotBuyMass
-
-#buyMass
-Amongos.
-$end
-
-#doNotBuyMass
-Sus.
-$end
-
-$set milk false
-$if milk true | #hasMilk | #noMilk
-
-#hasMilk
-I've got milk!
-$end
-
-#noMilk
-No milk :( NOOO That is a very sad moment in history
-
-
-That was a very sad moment
-[Indeed it was].talking
-You hear somebody say this.
-[I'm coming for you].red
-[Run].shake
+$sprite 1_marketentry
+$wait 2000
+$sprite 2_chocolate
+$wait 2000
+$sprite 3_milk
+$wait 2000
+$sprite 4_mass
+$wait 2000
+$sprite 5_casher
+$wait 2000
+$sprite 6_path
+$wait 2000
+$sprite 7_forest
+$wait 2000
+$sprite 8_cursedpath
+$wait 2000
+$sprite 9_forestbed
+$wait 2000
+$sprite 10_forestbednight
+$wait 2000
+$sprite 11_lookinguptrees
+$wait 2000
+$sprite 12_lookinguptreesnight
+$wait 2000
+$sprite 13_lostpathglow
+$wait 2000
+$sprite 14_woodenhouse
+$wait 2000
+$sprite 15_woodenhousepeek
+$wait 2000
+$spriteState noticed
+$wait 2000
+$sprite 16_talkingtomonster
+$wait 2000
+$sprite 17_theyrebehind
+$wait 2000
+$sprite 18_theygotyou
+$wait 2000
+$spriteState angry
+$wait 2000
+$sprite 19_youwakeup
+$wait 2000
+$spriteState wakeUp
+$wait 2000
+$sprite 20_funnydog
+$wait 2000
+$sprite 21_cauldron
+$wait 2000
+$sprite 22_monstershandincauldron
+$wait 2000
+$sprite 23_pepperreveal
+$wait 2000
+$sprite 24_monsterhaspepper
+$wait 2000
+$spriteState lookingAtPlayer
+$wait 2000
+$sprite 25_holdingpepper
+$wait 2000
+$sprite 26_pain
+$wait 2000
+$spriteState pain
+$wait 2000
+$sprite 27_lol
+$wait 2000
+$spriteState transition
+$wait 2000
+$spriteState scary
+$wait 2000
+$sprite 28_milk
+$wait 2000
+$sprite 29_ending
+$wait 2000
 $end

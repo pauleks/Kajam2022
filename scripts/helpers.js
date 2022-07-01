@@ -42,7 +42,7 @@ const changeSprite = (newSpriteSource) => {
  * @param {*} state the state to set the sprite to
  */
 const setSpriteState = (state) => {
-    spriteObject.play(state);
+    backgroundSpriteObject.play(state);
 }
 
 /**
