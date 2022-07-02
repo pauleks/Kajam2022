@@ -56,7 +56,7 @@ const gameLogic = async () => {
     if (action.startsWith("$sprite")) {
         // $sprite ExampleName
         let spriteName = action.substring(7);
-        changeSprite(removeWhitespace(spriteName));
+        await changeSprite(removeWhitespace(spriteName));
         return gameLogic();
     }
 

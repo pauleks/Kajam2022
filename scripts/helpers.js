@@ -4,6 +4,7 @@ var backgroundSpriteObject,
     textObject,
     _textConfiguration = {
         font: "Playfair",
+        size: Constants.font.size,
         styles: {
             "shake": () => ({
                 pos: vec2(wave(-1, 1, time() * 135), wave(-1, 1, time() * 75))
@@ -22,20 +23,45 @@ var backgroundSpriteObject,
  * @param {string} newSpriteSource the source of the new sprite
  * @param {string} spriteObject the state of the new sprite 
  */
-const changeSprite = (newSpriteSource) => {
-    if (backgroundSpriteObject && backgroundSpriteObject.destroy) backgroundSpriteObject.destroy();
-    backgroundSpriteObject = add([
+const changeSprite = (newSpriteSource) => new Promise((resolve) => {
+    let o = 0, overlay = add([
+        rect(width(), height()),
+        color(0, 0, 0),
+        opacity(0),
         pos(0, 0),
-        sprite(newSpriteSource, {
-            anim: "idle",
-            width: Constants.canvas.width,
-            height: Constants.canvas.height,
-        }),
-        z(1)
-    ])
+        z(10),
+    ]);
 
-    console.log(backgroundSpriteObject)
-}
+    let firstInterval = setInterval(() => {
+        o += 0.25;
+        overlay.opacity = o;
+
+        if (o >= 1) {
+            clearInterval(firstInterval);
+            if (backgroundSpriteObject && backgroundSpriteObject.destroy) backgroundSpriteObject.destroy();
+            backgroundSpriteObject = add([
+                pos(0, 0),
+                sprite(newSpriteSource, {
+                    anim: "idle",
+                    width: Constants.canvas.width,
+                    height: Constants.canvas.height,
+                }),
+                z(1)
+            ])
+            
+            let secondInterval = setInterval(() => {
+                o -= 0.25;
+                overlay.opacity = o;
+
+                if (o <= 0) {
+                    clearInterval(secondInterval);
+                    overlay.destroy();
+                    resolve();
+                }
+            }, 150)
+        }
+    }, 150);
+})
 
 /**
  * Sets sprite to a given state
@@ -71,7 +97,11 @@ const showDialogue = (t, speaker) => new Promise(async (resolve) => {
     ]);
 
     document.body.onclick = null;
+    document.body.classList.add("no-cursor")
+    document.querySelector('#game').classList.add("no-cursor");
     await revealDialogue(textObject.height);
+    document.body.classList.remove("no-cursor");
+    document.querySelector('#game').classList.remove("no-cursor");
     document.body.onclick = () => {
         disableDialogue();
         textBackground.destroy();
@@ -84,7 +114,7 @@ const showDialogue = (t, speaker) => new Promise(async (resolve) => {
  */
 const disableDialogue = () => {
     if (textObject.destroy) textObject.destroy();
-} 
+}
 
 /**
  * Reveals the dialogue
@@ -92,12 +122,12 @@ const disableDialogue = () => {
  * @param {*} h the height of the dialogue
  */
 const revealDialogue = (h) => new Promise((resolve) => {
-    let rowCount = Math.ceil(h / Constants.font.grid.height);
-    
+    let rowCount = Math.ceil(h / Constants.font.size);
+
     for (let i = 0; i < rowCount; i++) {
         let text = add([
-            rect(width() * (i + 1), Constants.font.grid.height),
-            pos(width() - (width() * (i + 1)), height() - h + (i * Constants.font.grid.height)),
+            rect(width() * (i + 1), Constants.font.size),
+            pos(width() - (width() * (i + 1)), height() - h + (i * Constants.font.size)),
             color(0, 0, 0),
             "textreveal",
             layer("textreveal"),
@@ -124,35 +154,61 @@ const revealDialogue = (h) => new Promise((resolve) => {
  * @returns {Promise} a promise that resolves when the player makes a choice
  */
 const showChoices = (firstChoice, secondChoice) => new Promise((resolve) => {
+    let selectedButtonBackground;
+
     const showButton = (t, id, p, c) => {
-        add([
+        let button = add([
             text(t, _textConfiguration),
             layer("buttons"),
             pos(p),
             area(),
-            outline(10, RED),
             id,
             "selection",
-            z(8)
+            z(8),
         ])
 
         onClick(id, c);
+        onHover(id, (el) => {
+            if (selectedButtonBackground) selectedButtonBackground.destroy();
+            if (el.isHovering()) selectedButtonBackground = add([
+                rect(el.width + 16, el.height + 16),
+                pos(el.pos.x - 8, el.pos.y - 8),
+                color(BLUE),
+                z(6),
+                "buttonbackground"
+            ])
+        })
+
+        return button;
     }
 
-    showButton(firstChoice.text, "firstChoice", vec2(Constants.font.size, height() / 2 - Constants.font.size), () => resolve(firstChoice.goto));
-    showButton(secondChoice.text, "secondChoice", vec2(Constants.font.size, height() / 2 + Constants.font.size), () => resolve(secondChoice.goto));
-    let buttonsBackground = add([
-        rect(width(), height()),
+    let firstButton = showButton(firstChoice.text, "firstChoice", vec2(Constants.font.size, height() / 2 - Constants.font.size), () => resolve(firstChoice.goto));
+    let secondButton = showButton(secondChoice.text, "secondChoice", vec2(Constants.font.size, height() / 2 + Constants.font.size), () => resolve(secondChoice.goto));
+    let firstButtonBackground = add([
+        rect(firstButton.width, firstButton.height),
         layer("buttonbackground"),
         color(0, 0, 0),
-        opacity(0.3),
-        z(7)
-    ])
+        opacity(7),
+        z(7),
+        area(),
+        pos(firstButton.pos),
+        "buttonbackground",
+    ]);
+    let secondButtonBackground = add([
+        rect(secondButton.width, secondButton.height),
+        layer("buttonbackground"),
+        color(0, 0, 0),
+        opacity(7),
+        z(7),
+        area(),
+        pos(secondButton.pos),
+        "buttonbackground",
+    ]);
 
     onClick("selection", () => {
-        let buttons = get("selection");
+        let buttons = get("selection"), buttonBackgrounds = get("buttonbackground");
         buttons.forEach((el) => el.destroy());
-        buttonsBackground.destroy();
+        buttonBackgrounds.forEach((el) => el.destroy());
     });
 });
 

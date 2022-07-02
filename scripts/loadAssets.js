@@ -9,7 +9,7 @@ loadSprite("16_talkingtomonster", "/assets/sprites/16_talkingtomonster.png", { s
 loadSprite("17_theyrebehind", "/assets/sprites/17_theyrebehind.png", { sliceX: 5, anims: {"idle":{"from":0,"to":4,"loop":true}} });
 loadSprite("18_theygotyou", "/assets/sprites/18_theygotyou.png", { sliceX: 10, anims: {"idle":{"from":0,"to":4,"loop":true},"angry":{"from":5,"to":9,"loop":true}} });
 loadSprite("19_youwakeup", "/assets/sprites/19_youwakeup.png", { sliceX: 10, anims: {"idle":{"from":0,"to":4,"loop":true},"wakeUp":{"from":5,"to":9,"loop":true}} });
-loadSprite("1_marketentry", "/assets/sprites/1_marketentry.png", { sliceX: 13, anims: {"idle":{"from":0,"to":12,"loop":false}} });
+loadSprite("1_marketentry", "/assets/sprites/1_marketentry.png", { sliceX: 16, anims: {"idle":{"from":0,"to":15,"loop":false},"opened":{"from":12,"to":15,"loop":true}} });
 loadSprite("20_funnydog", "/assets/sprites/20_funnydog.png", { sliceX: 5, anims: {"idle":{"from":0,"to":4,"loop":true}} });
 loadSprite("21_cauldron", "/assets/sprites/21_cauldron.png", { sliceX: 12, anims: {"idle":{"from":0,"to":11,"loop":true}} });
 loadSprite("22_monstershandincauldron", "/assets/sprites/22_monstershandincauldron.png", { sliceX: 12, anims: {"idle":{"from":0,"to":11,"loop":true}} });
@@ -25,7 +25,7 @@ loadSprite("3_milk", "/assets/sprites/3_milk.png", { sliceX: 4, anims: {"idle":{
 loadSprite("4_mass", "/assets/sprites/4_mass.png", { sliceX: 4, anims: {"idle":{"from":0,"to":3,"loop":true}} });
 loadSprite("5_casher", "/assets/sprites/5_casher.png", { sliceX: 5, anims: {"idle":{"from":0,"to":4,"loop":true}} });
 loadSprite("6_path", "/assets/sprites/6_path.png", { sliceX: 6, anims: {"idle":{"from":0,"to":5,"loop":true}} });
-loadSprite("7_forest", "/assets/sprites/7_forest.png", { sliceX: 3, anims: {"idle":{"from":0,"to":2,"loop":true,"speed":3}} });
+loadSprite("7_forest", "/assets/sprites/7_forest.png", { sliceX: 5, anims: {"idle":{"from":0,"to":4,"loop":true}} });
 loadSprite("8_cursedpath", "/assets/sprites/8_cursedpath.png", { sliceX: 6, anims: {"idle":{"from":0,"to":5,"loop":true}} });
 loadSprite("9_forestbed", "/assets/sprites/9_forestbed.png", { sliceX: 5, anims: {"idle":{"from":0,"to":4,"loop":true}} });
 loadSprite("blank", "/assets/sprites/blank.png", { sliceX: 1, anims: {"idle":{"from":0,"to":0,"loop":false}} });

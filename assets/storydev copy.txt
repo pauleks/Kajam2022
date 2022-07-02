@@ -1,14 +1,8 @@
 $sprite 1_marketentry
-$wait 1300
+
 $spriteState opened
 
-I can't wait to go shopping!
 $sprite 2_chocolate
-
-Should I buy chocolate?
-$choices | Yes. #marketMilkScene |[I love chocolate!].shake.red #marketMilkScene
-
-#marketMilkScene
 
 $sprite 3_milk
 

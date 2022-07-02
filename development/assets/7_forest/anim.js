@@ -1,9 +1,8 @@
 module.exports = {
     idle: {
         from: 0,
-        to: 2,
+        to: 4,
         loop: true,
-        speed: 3
     }
 }
 

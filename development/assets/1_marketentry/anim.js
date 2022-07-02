@@ -1,8 +1,13 @@
 module.exports = {
     idle: {
         from: 0,
-        to: 12,
+        to: 15,
         loop: false
+    },
+    opened: {
+        from: 12,
+        to: 15,
+        loop: true
     }
 }
 
