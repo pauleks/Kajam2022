@@ -16,14 +16,14 @@ loadSprite("22_monstershandincauldron", "/assets/sprites/22_monstershandincauldr
 loadSprite("23_pepperreveal", "/assets/sprites/23_pepperreveal.png", { sliceX: 4, anims: {"idle":{"from":0,"to":3,"loop":true}} });
 loadSprite("24_monsterhaspepper", "/assets/sprites/24_monsterhaspepper.png", { sliceX: 8, anims: {"idle":{"from":0,"to":3,"loop":true},"lookingAtPlayer":{"from":4,"to":7,"loop":true}} });
 loadSprite("25_holdingpepper", "/assets/sprites/25_holdingpepper.png", { sliceX: 5, anims: {"idle":{"from":0,"to":4,"loop":true}} });
-loadSprite("26_pain", "/assets/sprites/26_pain.png", { sliceX: 13, anims: {"idle":{"from":0,"to":12,"loop":false},"pain":{"from":7,"to":12,"loop":true}} });
+loadSprite("26_pain", "/assets/sprites/26_pain.png", { sliceX: 17, anims: {"idle":{"from":0,"to":16,"loop":false},"pain":{"from":11,"to":16,"loop":true}} });
 loadSprite("27_lol", "/assets/sprites/27_lol.png", { sliceX: 22, anims: {"idle":{"from":0,"to":5,"loop":true},"transition":{"from":6,"to":21,"loop":false},"scary":{"from":16,"to":21,"loop":true}} });
 loadSprite("28_milk", "/assets/sprites/28_milk.png", { sliceX: 5, anims: {"idle":{"from":0,"to":4,"loop":true}} });
 loadSprite("29_ending", "/assets/sprites/29_ending.png", { sliceX: 5, anims: {"idle":{"from":0,"to":4,"loop":true}} });
 loadSprite("2_chocolate", "/assets/sprites/2_chocolate.png", { sliceX: 4, anims: {"idle":{"from":0,"to":3,"loop":true}} });
 loadSprite("3_milk", "/assets/sprites/3_milk.png", { sliceX: 4, anims: {"idle":{"from":0,"to":3,"loop":true}} });
 loadSprite("4_mass", "/assets/sprites/4_mass.png", { sliceX: 4, anims: {"idle":{"from":0,"to":3,"loop":true}} });
-loadSprite("5_casher", "/assets/sprites/5_casher.png", { sliceX: 5, anims: {"idle":{"from":0,"to":4,"loop":true}} });
+loadSprite("5_casher", "/assets/sprites/5_casher.png", { sliceX: 4, anims: {"idle":{"from":0,"to":3,"loop":true}} });
 loadSprite("6_path", "/assets/sprites/6_path.png", { sliceX: 6, anims: {"idle":{"from":0,"to":5,"loop":true}} });
 loadSprite("7_forest", "/assets/sprites/7_forest.png", { sliceX: 5, anims: {"idle":{"from":0,"to":4,"loop":true}} });
 loadSprite("8_cursedpath", "/assets/sprites/8_cursedpath.png", { sliceX: 6, anims: {"idle":{"from":0,"to":5,"loop":true}} });

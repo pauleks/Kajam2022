@@ -36,6 +36,9 @@ const changeSprite = (newSpriteSource) => new Promise((resolve) => {
         o += 0.25;
         overlay.opacity = o;
 
+        document.body.classList.add("no-cursor")
+        document.querySelector('#game').classList.add("no-cursor");
+
         if (o >= 1) {
             clearInterval(firstInterval);
             if (backgroundSpriteObject && backgroundSpriteObject.destroy) backgroundSpriteObject.destroy();
@@ -48,7 +51,7 @@ const changeSprite = (newSpriteSource) => new Promise((resolve) => {
                 }),
                 z(1)
             ])
-            
+
             let secondInterval = setInterval(() => {
                 o -= 0.25;
                 overlay.opacity = o;
@@ -56,6 +59,8 @@ const changeSprite = (newSpriteSource) => new Promise((resolve) => {
                 if (o <= 0) {
                     clearInterval(secondInterval);
                     overlay.destroy();
+                    document.body.classList.remove("no-cursor")
+                    document.querySelector('#game').classList.remove("no-cursor");
                     resolve();
                 }
             }, 150)
@@ -274,7 +279,7 @@ const compareVariables = (variable, value) => {
 const skipToScene = (requiredScene) => {
     while (STORY.length > 0) {
         if (STORY[0] == requiredScene) {
-            STORY.shift();
+            STORY.shift()
             break;
         }
         STORY.shift();

@@ -19,7 +19,7 @@ class Choice {
 // Fetches the story from the server
 const fetchGameStory = () => new Promise(async (resolve, reject) => {
     try {
-        STORY = (await (await fetch("/assets/storydev.txt")).text()).split('\n');
+        STORY = (await (await fetch("/assets/story.txt")).text()).split('\n');
         resolve();
     } catch (err) {
         console.error(err);
@@ -39,7 +39,7 @@ const gameLogic = async () => {
             // get text between { and }
             speaker = action.substring(1, action.indexOf("}"));
             textContent = action.substring(action.indexOf("}") + 1);
-            await showDialogue(removeWhitespace(speaker), removeWhitespace(textContent));
+            await showDialogue(removeWhitespace(textContent), removeWhitespace(speaker));
             return gameLogic();
         }
         await showDialogue(removeWhitespace(action));
@@ -82,7 +82,13 @@ const gameLogic = async () => {
     }
 
     if (action.startsWith("$wait")) {
-        return setTimeout(gameLogic, removeWhitespace(action.substring(5)));
+        document.body.classList.add("no-cursor")
+        document.querySelector('#game').classList.add("no-cursor");
+        return setTimeout(() => {
+            document.body.classList.remove("no-cursor")
+            document.querySelector('#game').classList.remove("no-cursor");
+            gameLogic();
+        }, removeWhitespace(action.substring(5)));
     }
 
     if (action.startsWith("$set")) {
@@ -124,7 +130,6 @@ const gameLogic = async () => {
     if (action.startsWith("$goto")) {
         // $goto #exampleScene
         let sceneName = action.substring(6);
-        return console.log(sceneName);
         skipToScene(removeWhitespace(sceneName));
         return gameLogic();
     }

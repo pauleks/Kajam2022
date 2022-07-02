@@ -1,12 +1,12 @@
 module.exports = {
     idle: {
         from: 0,
-        to: 12,
+        to: 16,
         loop: false
     },
     pain: {
-        from: 7,
-        to: 12,
+        from: 11,
+        to: 16,
         loop: true
     }
 }
