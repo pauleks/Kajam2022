@@ -4,6 +4,7 @@ scene("intro", () => {
         pos(width() / 2, height() / 2),
         origin("center"),
     ])
+    play("intro")
     setTimeout(() => {
         go("game");
     }, 3000);

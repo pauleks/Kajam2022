@@ -5,8 +5,10 @@ scene("end", () => {
         origin("center"),
     ])
 
+    play("outro")
+
     setTimeout(() => {
         //redirect to /thankyou.html
         window.location.href = "/thankyou.html";
-    }, 6000);
+    }, 10000);
 });

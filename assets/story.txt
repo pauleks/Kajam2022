@@ -1,4 +1,6 @@
+$sfx 1_slidingdoors
 $sprite 1_marketentry
+$playMusic 1_marketmusic
 $wait 1000
 $spriteState opened
 Ah, the smell and sound of Quickmart.
@@ -42,6 +44,8 @@ $goto #forestScene
 
 #forestScene
 I head out towards the exit.
+$stopMusic 1_marketmusic
+$playMusic 2_forest
 $sprite 6_path
 The only way back home is through that forest.
 $sprite 7_forest
@@ -64,10 +68,12 @@ $sprite 11_lookinguptrees
 $wait 6000
 [Feels as if someone else is laying with you.].shake
 $wait 10000
-You feel them leave
+You feel them leave.
 $sprite blank
 Your eyelashes feel heavy...
+$stopMusic 2_forest
 You fall asleep.
+$playMusic 4_night
 $sprite 12_lookinguptreesnight
 You wake up after a peaceful sleep.
 However, your groceries are nowhere to be seen.
@@ -78,7 +84,7 @@ $sprite 13_lostpathglow
 You lose the track of your path...
 You're now lost in the woods.
 
-You see a glowing light somewhere between the trees.
+You notice a glowing light somewhere between the trees.
 Do you proceed to go there?
 $choices | [Yes.].shake #affirmative | No. #negative
 
@@ -94,7 +100,7 @@ $goto #goToHouse
 You proceed to follow the strange light.
 $sprite 14_woodenhouse
 
-The light leads you to an old wooden house.
+The strange glow leads you to an old wooden house.
 You go inside.
 $sprite blank
 ...
@@ -102,9 +108,14 @@ $sprite 15_woodenhousepeek
 
 [There's a mysterious shadow figure inside the house.].shake
 $spriteState noticed
+$sfx 2_monsterappear
+
+[Looks like it has noticed me.].shake
 {monster} [A new guest, I see!].talking
 {monster} [Welcome! I was expecting you actually.].talking
 {monster} [Come in!].talking
+$stopMusic 4_night
+$playMusic 6_talkingtomonster
 $sprite 16_talkingtomonster
 
 {monster} [I hope that meeting Pugo earlier wasn't too scary.].talking
@@ -115,6 +126,8 @@ It looks funny.
 $goto #continuation
 
 #notResting
+$stopMusic 2_forest
+$playMusic 4_aloneinforest
 $sprite 17_theyrebehind
 
 You feel them behind your back...
@@ -127,18 +140,23 @@ $spriteState angry
 [...are the glowing hellish eyes in front of you.].shake.red
 $sprite blank
 You fall unconscious.
+$stopMusic 4_aloneinforest
 $sprite 19_youwakeup
+$playMusic 5_wakeupinside
 
 You wake up.
-It feels warm. You're laying on your back, looking to the ceiling.
+It feels warm. You're laying on your back, looking at the ceiling.
 $spriteState wakeUp
+$sfx 2_monsterappear
 [Suddently, a strange figure enters your sight...].shake
 {monster} [Ah, I see you're finally awake.].talking
 {monster} [Come on, get up.].talking
+$stopMusic 5_wakeupinside
+$playMusic 6_talkingtomonster
 $sprite 16_talkingtomonster
 {monster} [Sorry about meeting Pugo like that.].talking
 {monster} [He bit you while you were walking.].talking
-{monster} [He's been a bad doggy lately...].talking
+{monster} [He's been a bad dog lately...].talking
 $sprite 20_funnydog
 
 Oh, so that's the creature I met earlier.
@@ -164,19 +182,23 @@ The monster has put its hand into the cauldron!
 {monster} [It should be somewhere in here...].talking
 {monster} [GOT IT!].talking.shake
 $sprite 23_pepperreveal
+$sfx 5_pepperreveal
 
-The monster takes out this shiny pepper from inside the cauldron.
+The monster takes out this shiny pepper from the cauldron.
 $sprite 24_monsterhaspepper 
 {monster} [My newest creation.].talking
 {monster} [The taste is so magical...].talking
 {monster} [The one, who dares to taste this pepper...].talking
-{monster} [...will experience the purest form of].talking [spiciness].red
+{monster} [...will experience the purest form of].talking [spiciness.].red
 $spriteState lookingAtPlayer
+$sfx 3_monsterlooksatyou
 {monster} [...].talking
+$stopMusic 6_talkingtomonster
 {monster} [But I can't do that myself...].talking
+$playMusic 7_youhavethepepper
 {monster} [Instead...].talking
 {monster} [I'll need you to taste this for me.].talking
-{monster} [There is no escape from this].red
+{monster} [There is no escape from this.].red
 $choices | [Do it.].red #tastingPepper | [Taste the pepper.].red #tastingPepper
 
 #tastingPepper
@@ -184,21 +206,25 @@ $sprite 25_holdingpepper
 You take the pepper from the creature.
 It's so hot, [it's burning your skin.].shake
 $sprite blank
+$stopMusic 7_youhavethepepper
 You close your eyes, put the pepper inside your mouth...
 ...and then you bite it.
+$playMusic 3_pain
+$sfx 4_pain
 $sprite 26_pain
 $wait 750
 $spriteState pain
 
-[Devilish pain like no other has filled up your whole body.].red.shake
+[Devilish pain like no other has filled up your entire body.].red.shake
 [It feels like you're fighting against the force of a thousand fires.].red.shake
 $sprite 27_lol
-[No other human will taste this hellish spiciness.].red [EVER.].red.shake
+{monster} [No other human will taste this hellish spiciness.].red [EVER.].red.shake
 $spriteState transition
+$sfx 6_monsterreveal
 $wait 1000
 $spriteState scary
-$wait 2000
-{monster_pain} [Feel the pain.].red.shake
+$wait 3000
+{monster_scary} [Feel the pain.].red.shake
 $sprite blank
 [You feel your soul slowly leaving your body.].red
 [Only if there was something that could save me from this madness.].red
@@ -227,8 +253,12 @@ Is this the end?
 $goto #ending
 
 #ending
+$stopMusic 3_pain
 $sprite 29_ending
+$play 8_purgatory
 $wait 3000
+$sfx 7_phonering
+$wait 1500
 A phone rings.
 $wait 2000
 [Welcome to the purgatory. The Satan is currently busy.].red

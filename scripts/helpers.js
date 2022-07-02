@@ -104,7 +104,19 @@ const showDialogue = (t, speaker) => new Promise(async (resolve) => {
     document.body.onclick = null;
     document.body.classList.add("no-cursor")
     document.querySelector('#game').classList.add("no-cursor");
+
+    let speakingInterval;
+    if (speaker) {
+        speakingInterval = setInterval(() => {
+            play(speaker, {
+                detune: randi(-150, 150)
+            })
+        }, 150)
+    }
+
     await revealDialogue(textObject.height);
+
+    if (speaker) clearInterval(speakingInterval);
     document.body.classList.remove("no-cursor");
     document.querySelector('#game').classList.remove("no-cursor");
     document.body.onclick = () => {
@@ -187,8 +199,8 @@ const showChoices = (firstChoice, secondChoice) => new Promise((resolve) => {
         return button;
     }
 
-    let firstButton = showButton(firstChoice.text, "firstChoice", vec2(Constants.font.size, height() / 2 - Constants.font.size), () => resolve(firstChoice.goto));
-    let secondButton = showButton(secondChoice.text, "secondChoice", vec2(Constants.font.size, height() / 2 + Constants.font.size), () => resolve(secondChoice.goto));
+    let firstButton = showButton(firstChoice.text, "firstChoice", vec2(Constants.font.size, height() / 2 - Constants.font.size), () => { play("interaction"); resolve(firstChoice.goto) });
+    let secondButton = showButton(secondChoice.text, "secondChoice", vec2(Constants.font.size, height() / 2 + Constants.font.size), () => { play("interaction"); resolve(secondChoice.goto) });
     let firstButtonBackground = add([
         rect(firstButton.width, firstButton.height),
         layer("buttonbackground"),
@@ -235,8 +247,15 @@ const playedBackgroundMusic = new Map();
  */
 const playBackgroundMusic = (newMusic) => {
     if (playedBackgroundMusic.has(newMusic)) return;
-    play(newMusic);
-    playedBackgroundMusic.set(newMusic, true);
+    let music = play(newMusic, { volume: 0.1, loop: true }), v = 0;
+    let fadeInInterval = setInterval(() => {
+        if (v < 1) v += 0.05;
+        music.volume(v);
+        if (v >= 1) {
+            playedBackgroundMusic.set(newMusic, music);
+            clearInterval(fadeInInterval);
+        }
+    }, 100)
 }
 
 /**
@@ -245,8 +264,16 @@ const playBackgroundMusic = (newMusic) => {
  */
 const stopBackgroundMusic = (musicToStop) => {
     if (playedBackgroundMusic.has(musicToStop)) {
-        stop(musicToStop);
-        playedBackgroundMusic.delete(musicToStop);
+        let v = 1, music = playedBackgroundMusic.get(musicToStop);
+        let fadeOutInterval = setInterval(() => {
+            if (v > 0) v -= 0.05;
+            music.volume(v);
+            if (v <= 0) {
+                music.stop();
+                playedBackgroundMusic.delete(musicToStop);
+                clearInterval(fadeOutInterval);
+            }
+        }, 100);
     }
 }
 
