@@ -46,6 +46,7 @@ loadSound("4_pain", "/assets/sounds/sfx/4_pain.ogg");
 loadSound("5_pepperreveal", "/assets/sounds/sfx/5_pepperreveal.mp3");
 loadSound("6_monsterreveal", "/assets/sounds/sfx/6_monsterreveal.mp3");
 loadSound("7_phonering", "/assets/sounds/sfx/7_phonering.mp3");
+loadSound("8_monsterbite", "/assets/sounds/sfx/8_monsterbite.wav");
 loadSound("interaction", "/assets/sounds/sfx/interaction.mp3");
 loadSound("intro", "/assets/sounds/sfx/intro.mp3");
 loadSound("outro", "/assets/sounds/sfx/outro.mp3");

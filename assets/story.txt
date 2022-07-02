@@ -129,10 +129,11 @@ $goto #continuation
 $stopMusic 2_forest
 $playMusic 4_aloneinforest
 $sprite 17_theyrebehind
-
+$wait 5000
 You feel them behind your back...
 [Getting closer and closer to you...].shake
 $sprite blank
+$sfx 8_monsterbite
 [A tremendous pain pierces your leg.].shake.red
 $sprite 18_theygotyou
 The last thing you can see...
@@ -255,12 +256,11 @@ $goto #ending
 #ending
 $stopMusic 3_pain
 $sprite 29_ending
-$play 8_purgatory
-$wait 3000
+$playMusic 8_purgatory
+$wait 6000
 $sfx 7_phonering
-$wait 1500
+$wait 4000
 A phone rings.
-$wait 2000
 [Welcome to the purgatory. The Satan is currently busy.].red
 [You're currently 53rd in line, please wait.].red
 $end
