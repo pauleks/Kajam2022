@@ -11,5 +11,5 @@ const Constants = {
             height: 30,
         },
     },
-    TEXT_REVEAL_SPEED: 400
+    TEXT_REVEAL_SPEED: 650
 };
